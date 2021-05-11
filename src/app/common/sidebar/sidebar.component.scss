@@ -1,0 +1,25 @@
+.background {
+  height: 100vh;
+  background-color: #f4f4f4;
+  width: 300px;
+  padding: 2em 3em;
+  display: inline-block;
+  position: fixed;
+}
+
+.menu {
+  margin-top: 2em;
+}
+
+.menu li {
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.menu li a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: black;
+}
+

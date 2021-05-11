@@ -2,14 +2,17 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CadastroFuncionarioComponent } from './cadastro-funcionario/cadastro-funcionario.component';
+import { CadastroPacienteComponent } from './cadastro-paciente/cadastro-paciente.component';
 import { HeaderComponent } from './common/header/header.component';
-import { MenuComponent } from './common/menu/menu.component';
+import { SidebarComponent } from './common/sidebar/sidebar.component';
+import { EstoqueComponent } from './estoque/estoque.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -17,14 +20,17 @@ import { LoginComponent } from './login/login.component';
     HeaderComponent,
     LoginComponent,
     HomeComponent,
-    MenuComponent
+    SidebarComponent,
+    CadastroFuncionarioComponent,
+    CadastroPacienteComponent,
+    EstoqueComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
