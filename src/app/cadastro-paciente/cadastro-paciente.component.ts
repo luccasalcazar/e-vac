@@ -18,14 +18,18 @@ export class CadastroPacienteComponent implements OnInit{
  
     ngOnInit() {
       this.cadastrarPacienteForm = this.formBuilder.group({
-        cpfPaciente: ['', Validators.required],
         emailPaciente: ['', Validators.required],
         nomePaciente: ['', Validators.required],
         telefonePaciente: ['', Validators.required],
+        cpfPaciente: ['', Validators.required],
+        cepPaciente: ['', Validators.required],
+        enderecoPaciente: ['', Validators.required],
+        numeroPaciente: ['', Validators.required],
+        complementoPaciente: ['', Validators.required]
       });
     }
 
   redirecionar() {
-    this.router.navigate(['home'])
+    this.router.navigate(['registro-vacina'])
   }
 }

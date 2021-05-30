@@ -13,7 +13,13 @@ import { EstoqueComponent } from './estoque/estoque.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RegistroVacinaComponent } from './registro-vacina/registro-vacina.component';
+import { IConfig, NgxMaskModule } from 'ngx-mask';
+import { ConsultarPacienteComponent } from './consultar-paciente/consultar-paciente.component';
+import { DadosVacinacaoComponent } from './dados-vacinacao/dados-vacinacao.component';
+import { ConsultarVacinasComponent } from './consultar-vacinas/consultar-vacinas.component';
 
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,14 +29,19 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SidebarComponent,
     CadastroFuncionarioComponent,
     CadastroPacienteComponent,
-    EstoqueComponent
+    EstoqueComponent,
+    RegistroVacinaComponent,
+    ConsultarPacienteComponent,
+    DadosVacinacaoComponent,
+    ConsultarVacinasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    NgxMaskModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

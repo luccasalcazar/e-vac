@@ -6,7 +6,7 @@
       <th scope="col">#</th>
       <th scope="col">Marca</th>
       <th scope="col">Quantidade</th>
-      <th scope="col">Consultar</th>
+      <th scope="col">Data do lote</th>
     </tr>
     </thead>
     <tbody>
@@ -14,7 +14,7 @@
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ country.marca }}</td>
       <td>{{ country.quantidade | number }}</td>
-      <td><a href="consultar-vacinas"><img src="assets/loupe.png" alt="" class="ms-4"></a></td>
+      <td>{{ country.lote }}</td>
     </tr>
     </tbody>
   </table>
