@@ -1,3 +1,4 @@
+<app-sidebar></app-sidebar>
 <h2 class="centralizar mt-4">Registro da Vacina</h2>
 <div class="d-flex justify-content-center">
   <div class="">
@@ -15,7 +16,7 @@
       <label for="" class="form-label">Nome do aplicador</label>
       <input type="text" class="form-control largura mb-3" placeholder="" formControlName="nomeFuncionario">  
     </div>
-    <button type="submit" (click)="redirecionar()" class="btn btn-primary">Confirmar</button>
+    <button type="submit" (click)="redirecionar()" class="btn btn-primary" [disabled]="!registrarVacinaForm.valid">Confirmar</button>
     </form>
   </div>
 </div>

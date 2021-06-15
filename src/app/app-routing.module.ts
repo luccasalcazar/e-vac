@@ -4,6 +4,7 @@ import { CadastroFuncionarioComponent } from './cadastro-funcionario/cadastro-fu
 import { CadastroPacienteComponent } from './cadastro-paciente/cadastro-paciente.component';
 import { ConsultarPacienteComponent } from './consultar-paciente/consultar-paciente.component';
 import { ConsultarVacinasComponent } from './consultar-vacinas/consultar-vacinas.component';
+import { AuthGuard } from './core/auth/auth.guard';
 import { DadosVacinacaoComponent } from './dados-vacinacao/dados-vacinacao.component';
 import { EstoqueComponent } from './estoque/estoque.component';
 
@@ -14,12 +15,8 @@ import { RegistroVacinaComponent } from './registro-vacina/registro-vacina.compo
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'login'
-  },
-  {
-    path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'home',

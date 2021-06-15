@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,8 @@ import { IConfig, NgxMaskModule } from 'ngx-mask';
 import { ConsultarPacienteComponent } from './consultar-paciente/consultar-paciente.component';
 import { DadosVacinacaoComponent } from './dados-vacinacao/dados-vacinacao.component';
 import { ConsultarVacinasComponent } from './consultar-vacinas/consultar-vacinas.component';
+import { RequestInterceptor } from './core/auth/request.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 @NgModule({
@@ -37,13 +40,21 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     CommonModule,
     ReactiveFormsModule,
     NgbModule,
     NgxMaskModule.forRoot(),
+    BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

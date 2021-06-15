@@ -1,18 +1,19 @@
+<app-sidebar></app-sidebar>
 <h2 class="centralizar mt-4">Cadastro de Funcionário</h2>
 <div class="d-flex justify-content-center">
   <div class="">
     <form [formGroup]="cadastrarFuncionarioForm">
     <div class="mb-3">
       <label for="" class="form-label mt-3">E-mail</label>
-      <input type="text" class="form-control largura mb-3" email="true" formControlName="emailFuncionario">
+      <input type="text" class="form-control largura mb-3" email="true" formControlName="email">
       <label for="" class="form-label">Nome Completo</label>
-      <input type="text" class="form-control largura mb-3" formControlName="nomeFuncionario">
+      <input type="text" class="form-control largura mb-3" formControlName="name">
       <label for="" class="form-label">Telefone</label>
-      <input type="text" class="form-control largura mb-3" placeholder="(XX) XXXXX-XXXX" formControlName="telefoneFuncionario" mask="(00) 00000-0000">  
+      <input type="text" class="form-control largura mb-3" placeholder="(XX) XXXXX-XXXX" formControlName="tel" mask="(00) 00000-0000">  
       <label for="" class="form-label">Password</label>
-      <input type="password" class="form-control largura mb-3" formControlName="passwordFuncionario">
+      <input type="password" class="form-control largura mb-3" formControlName="password">
     </div>
-    <button type="submit" (click)="redirecionar()" class="btn btn-primary">Cadastrar</button>
+    <button type="submit" (click)="registrar()" class="btn btn-primary">Cadastrar</button>
     </form>
   </div>
 </div>
