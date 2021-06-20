@@ -21,13 +21,13 @@
       <label for="" class="form-label negrito">Complemento :</label>
       <p class="mb-4">{{ data['complemento']}}</p>
       <label for="" class="form-label negrito">Marca da vacina :</label>
-      <p class="mb-4">Pfizer</p>
+      <p class="mb-4">{{ data['vaccineName'] }}</p>
       <label for="" class="form-label negrito">Data da vacinação :</label>
-      <p class="mb-4">05/05/1999</p>
+      <p class="mb-4">{{ data['vaccinationDate']}}</p>
       <label for="" class="form-label negrito">Nome do aplicador :</label>
-      <p class="mb-4">Jorge</p>
+      <p class="mb-4">{{ data['nameEmployee']}}</p>
     </div>
-    <button type="submit" (click)="redirecionar()" class="btn btn-primary mb-5">Dados vacinação</button>
+    <button type="submit" (click)="redirecionar()" class="btn btn-primary mb-5">Voltar</button>
     </form>
   </div>
 </div>

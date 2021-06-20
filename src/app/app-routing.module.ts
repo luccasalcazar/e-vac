@@ -5,14 +5,13 @@ import { CadastroPacienteComponent } from './cadastro-paciente/cadastro-paciente
 import {  DetalhesPacienteComponent } from './detalhes-paciente/detalhes-paciente.component';
 import { ConsultarVacinasComponent } from './consultar-vacinas/consultar-vacinas.component';
 import { AuthGuard } from './core/auth/auth.guard';
-import { DadosVacinacaoComponent } from './dados-vacinacao/dados-vacinacao.component';
 import { EstoqueComponent } from './estoque/estoque.component';
 
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { RegistroVacinaComponent } from './registro-vacina/registro-vacina.component';
 import { ConsultarPacienteComponent } from './consultar-paciente/consultar-paciente.component';
 import { ConsultarFuncionarioComponent } from './consultar-funcionario/consultar-funcionario.component';
+import { TwitterComponent } from './twitter/twitter.component';
 
 const routes: Routes = [
   {
@@ -37,10 +36,6 @@ const routes: Routes = [
     component: EstoqueComponent
   },
   {
-    path: 'registro-vacina',
-    component: RegistroVacinaComponent
-  },
-  {
     path: 'detalhes-paciente/:id',
     component: DetalhesPacienteComponent
   },
@@ -55,6 +50,10 @@ const routes: Routes = [
   {
     path: 'consultar-vacinas/:id',
     component: ConsultarVacinasComponent
+  },
+  {
+    path: 'twitter',
+    component: TwitterComponent
   }
 ];
 

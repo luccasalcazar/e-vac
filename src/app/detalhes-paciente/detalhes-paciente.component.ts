@@ -32,6 +32,6 @@ export class DetalhesPacienteComponent implements OnInit{
   }
 
   redirecionar() {
-    this.router.navigate(['dados-vacinacao'])
+    this.router.navigate(['consultar-paciente'])
   }
 }

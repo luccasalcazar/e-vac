@@ -1,0 +1,17 @@
+<app-sidebar></app-sidebar>
+<h2 class="centralizar mt-4">Enviar Comunicado</h2>
+<div class="d-flex justify-content-center">
+  <div class="">
+    <form [formGroup]="enviarTweetForm">
+    <div class="mb-3">
+      <label for="" class="form-label mt-3">CEP</label>
+      <input type="text" class="form-control largura mb-3" placeholder="XXXXX-XXX" mask="00000-000" formControlName="cep">
+      <label for="" class="form-label">Número do endereço</label>
+      <input type="text" class="form-control largura mb-3" formControlName="number">
+      <label for="" class="form-label">Quantidade de vacinas restantes</label>
+      <input type="text" class="form-control largura mb-3" formControlName="quantityVaccinesRemaining">  
+    </div>
+    <button type="submit" (click)="enviarTweet()" class="btn btn-primary" [disabled]="!enviarTweetForm.valid">Cadastrar</button>
+    </form>
+  </div>
+</div>

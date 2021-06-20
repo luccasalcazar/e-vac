@@ -20,6 +20,14 @@
       <input type="text" class="form-control largura mb-3" formControlName="number">
       <label for="" class="form-label">Complemento</label>
       <input type="text" class="form-control largura mb-3" formControlName="complemento">
+      <label for="" class="form-label">Marca da vacina</label>
+      <select class="form-select largura mb-3" formControlName="marcaVacina">
+        <option value="" disabled>Escolha uma marca</option>
+        <option 
+          *ngFor="let item of data"
+          [value]="item.id"
+        >{{ item.nameVaccine }}</option>
+      </select>
     </div>
     <button type="submit" (click)="registrar()" class="btn btn-primary" [disabled]="!cadastrarPacienteForm.valid">Cadastrar</button>
     </form>
