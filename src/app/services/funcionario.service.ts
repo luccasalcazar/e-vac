@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
-const URL = 'http://evac-tcc.herokuapp.com'
+const URL = 'https://evac-tcc.herokuapp.com'
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +17,13 @@ export class FuncionarioService {
       .post(
         URL + '/users/cadastro',
         obj
+      )
+  }
+
+  getFuncionarios() {
+    return this.http
+      .get(
+        URL + '/users/employees'
       )
   }
 }

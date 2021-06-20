@@ -16,11 +16,13 @@ import { LoginComponent } from './login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegistroVacinaComponent } from './registro-vacina/registro-vacina.component';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
-import { ConsultarPacienteComponent } from './consultar-paciente/consultar-paciente.component';
-import { DadosVacinacaoComponent } from './dados-vacinacao/dados-vacinacao.component';
+import { DetalhesPacienteComponent } from './detalhes-paciente/detalhes-paciente.component';
 import { ConsultarVacinasComponent } from './consultar-vacinas/consultar-vacinas.component';
 import { RequestInterceptor } from './core/auth/request.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConsultarPacienteComponent } from './consultar-paciente/consultar-paciente.component';
+import { DataTablesModule } from 'angular-datatables';
+import { ConsultarFuncionarioComponent } from './consultar-funcionario/consultar-funcionario.component';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 @NgModule({
@@ -34,9 +36,10 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     CadastroPacienteComponent,
     EstoqueComponent,
     RegistroVacinaComponent,
+    DetalhesPacienteComponent,
+    ConsultarVacinasComponent,
     ConsultarPacienteComponent,
-    DadosVacinacaoComponent,
-    ConsultarVacinasComponent
+    ConsultarFuncionarioComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     NgbModule,
     NgxMaskModule.forRoot(),
     BrowserAnimationsModule,
+    DataTablesModule
   ],
   providers: [
     {

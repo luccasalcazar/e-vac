@@ -1,36 +1,37 @@
-import { Component } from "@angular/core";
-
-interface Country {
-  marca: string;
-  quantidade: number;
-}
-
-const COUNTRIES: Country[] = [
-  {
-    marca: 'Coronavac',
-    quantidade: 1000000,
-  },
-  {
-    marca: 'Pfizer',
-    quantidade: 500000,
-  },
-  {
-    marca: 'AstraZeneca',
-    quantidade: 250000,
-  },
-  {
-    marca: 'Fiocruz',
-    quantidade: 125000,
-  }
-];
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { VacinaService } from "../services/vacina.service";
 
 @Component({
   selector: 'app-estoque',
   templateUrl: './estoque.component.html',
   styleUrls: ['./estoque.component.scss']
 })
-export class EstoqueComponent {
+export class EstoqueComponent implements OnInit{
 
-  countries = COUNTRIES;
-  
+  data: any = [];
+
+  constructor(
+    private vacinaService: VacinaService,
+    private router: Router
+  ) { }
+
+  ngOnInit() {
+    this.getMarcasVacina();
+  }
+
+  getMarcasVacina() {
+    this.vacinaService.getMarcasVacinas()
+      .subscribe(res => {
+        this.data = res;
+        console.log(this.data);
+        
+      }
+    )}
+
+  verDetalhes(vacina) {
+    this.vacinaService.setVacina(vacina);
+    console.log(vacina);
+    this.router.navigate([`consultar-vacinas/${vacina.id}`]);
+  }
 }

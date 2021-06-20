@@ -1,34 +1,6 @@
-import { Component } from "@angular/core";
-
-
-interface Country {
-  marca: string;
-  quantidade: number;
-  lote: string;
-}
-
-const COUNTRIES: Country[] = [
-  {
-    marca: 'Coronavac',
-    quantidade: 1000000,
-    lote: '05/05/1999',
-  },
-  {
-    marca: 'Pfizer',
-    quantidade: 500000,
-    lote: '06/06/1999',
-  },
-  {
-    marca: 'AstraZeneca',
-    quantidade: 250000,
-    lote: '07/07/1999'
-  },
-  {
-    marca: 'Fiocruz',
-    quantidade: 125000,
-    lote: '08/08/1999'
-  }
-];
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { VacinaService } from "../services/vacina.service";
 
 @Component({
   selector: 'app-consultar-vacinas',
@@ -36,7 +8,30 @@ const COUNTRIES: Country[] = [
   styleUrls: ['./consultar-vacinas.component.scss']
 })
 
-export class ConsultarVacinasComponent {
+export class ConsultarVacinasComponent implements OnInit {
   
-  countries = COUNTRIES;
+  id: number;
+  data: any = [];
+  
+  constructor(
+    private vacinaService: VacinaService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) { }
+
+  ngOnInit() {
+    this.activatedRoute.params.subscribe(params => {
+      this.id = params.id;
+    });
+    this.vacinaService.getVacina(this.id).subscribe(
+      res => {
+        console.log(res);
+        this.data = res;
+      }
+    )
+  }
+
+  redirecionar() {
+    this.router.navigate(['estoque']);
+  }
 }

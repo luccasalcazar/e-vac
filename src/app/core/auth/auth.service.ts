@@ -25,7 +25,9 @@ export class AuthService {
       )
       .pipe(tap(res => {
         const authToken = res['body']['token'];
+        const id = res['body']['id']
         this.tokenService.setToken(authToken);
+        this.tokenService.setId(id);
 
       }));
   }

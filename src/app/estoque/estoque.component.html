@@ -1,22 +1,22 @@
 <app-sidebar></app-sidebar>
 <div class="display">
   <h1 class="titulo">Estoque de vacinas</h1>
-  <table class="table table-striped">
-    <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Marca</th>
-      <th scope="col">Quantidade</th>
-      <th scope="col">Consultar</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let country of countries; index as i">
-      <th scope="row">{{ i + 1 }}</th>
-      <td>{{ country.marca }}</td>
-      <td>{{ country.quantidade | number }}</td>
-      <td><a href="consultar-vacinas"><img src="assets/loupe.png" alt="" class="ms-4"></a></td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="posicao mt-4">
+    <table>
+      <thead>
+        <tr>
+          <th class="ps-3">ID</th>
+          <th>Marca</th>
+          <th>Detalhes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vacina of data" class="border">
+          <td class="ps-3">{{ vacina.id }}</td>
+          <td>{{ vacina.nameVaccine }}</td>
+          <td><button class="btn" (click)=verDetalhes(vacina)><img src="assets/loupe.png"></button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

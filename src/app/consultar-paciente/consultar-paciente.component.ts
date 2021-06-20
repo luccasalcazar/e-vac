@@ -1,18 +1,38 @@
-import { Component } from "@angular/core";
+import {  Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { PacienteService } from "../services/paciente.service";
 
 @Component({
   selector: 'app-consultar-paciente',
   templateUrl: './consultar-paciente.component.html',
   styleUrls: ['./consultar-paciente.component.scss']
 })
-export class ConsultarPacienteComponent {
-  
+export class ConsultarPacienteComponent implements OnInit{
+
+  data: any = [];
+
   constructor(
-    private router: Router
+    private pacienteService: PacienteService,
+    private router: Router,
   ) { }
 
-  redirecionar() {
-    this.router.navigate(['dados-vacinacao'])
+    ngOnInit() {
+      this.getPacientes();
+    }
+
+
+  getPacientes(){
+    this.pacienteService.getPacientes()
+      .subscribe(res => {
+        this.data = res;
+        console.log(this.data);
+        
+      })
+  }
+
+  verDetalhes(user) {
+    this.pacienteService.setUser(user);
+    console.log(user);
+    this.router.navigate([`detalhes-paciente/${user.id}`]);
   }
 }

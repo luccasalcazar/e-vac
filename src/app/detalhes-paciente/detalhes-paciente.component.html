@@ -1,0 +1,33 @@
+<app-sidebar></app-sidebar>
+<h2 class="centralizar mt-4">Dados do paciente</h2>
+<div class="d-flex justify-content-center">
+  <div class="">
+    <form >
+    <div class="mb-3">
+      <label for="" class="form-label mt-3 negrito" email="true">E-mail:</label>
+      <p class="mb-4">{{ data['email'] }} </p>
+      <label for="" class="form-label negrito">Nome Completo :</label>
+      <p class="mb-4">{{ data['name']}} </p>
+      <label for="" class="form-label negrito">Telefone :</label>
+      <p class="mb-4">{{ data['tel']}} </p>  
+      <label for="" class="form-label negrito">CPF :</label>
+      <p class="mb-4">{{ data['cpf']}} </p>
+      <label for="" class="form-label negrito">CEP :</label>
+      <p class="mb-4">{{ data['cep']}} </p>
+      <label for="" class="form-label negrito">Endereço :</label>
+      <p class="mb-4">{{ data['address']}}</p>
+      <label for="" class="form-label negrito">Número :</label>
+      <p class="mb-4">{{ data['number']}}</p>
+      <label for="" class="form-label negrito">Complemento :</label>
+      <p class="mb-4">{{ data['complemento']}}</p>
+      <label for="" class="form-label negrito">Marca da vacina :</label>
+      <p class="mb-4">Pfizer</p>
+      <label for="" class="form-label negrito">Data da vacinação :</label>
+      <p class="mb-4">05/05/1999</p>
+      <label for="" class="form-label negrito">Nome do aplicador :</label>
+      <p class="mb-4">Jorge</p>
+    </div>
+    <button type="submit" (click)="redirecionar()" class="btn btn-primary mb-5">Dados vacinação</button>
+    </form>
+  </div>
+</div>

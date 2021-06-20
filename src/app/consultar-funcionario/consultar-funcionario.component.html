@@ -1,0 +1,20 @@
+<app-sidebar></app-sidebar>
+<h2 class="centralizar mt-4">Consultar Funcionarios</h2>
+<div class="posicao mt-4">
+  <table>
+    <thead>
+      <tr>
+        <th class="ps-3">ID</th>
+        <th class="ps-2">Nome</th>
+        <th class="padding">E-mail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let funcionario of data" class="border">
+        <td class="ps-3">{{ funcionario.id }}</td>
+        <td class="ps-2">{{ funcionario.name }}</td>
+        <td class="padding">{{ funcionario.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

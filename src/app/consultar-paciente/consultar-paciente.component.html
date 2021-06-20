@@ -1,27 +1,20 @@
 <app-sidebar></app-sidebar>
-<h2 class="centralizar mt-4">Dados do paciente</h2>
-<div class="d-flex justify-content-center">
-  <div class="">
-    <form>
-    <div class="mb-3">
-      <label for="" class="form-label mt-3 negrito" email="true">E-mail:</label>
-      <p class="mb-4">luccasalcazar@gmail.com </p>
-      <label for="" class="form-label negrito">Nome Completo :</label>
-      <p class="mb-4">Lucas Alcazar Suguita </p>
-      <label for="" class="form-label negrito">Telefone :</label>
-      <p class="mb-4">(11) 97457-6032 </p>  
-      <label for="" class="form-label negrito">CPF :</label>
-      <p class="mb-4">345.543.543-65 </p>
-      <label for="" class="form-label negrito">CEP :</label>
-      <p class="mb-4">03343-054 </p>
-      <label for="" class="form-label negrito">Endereço :</label>
-      <p class="mb-4">Avenida Paulista </p>
-      <label for="" class="form-label negrito">Número :</label>
-      <p class="mb-4">6969 </p>
-      <label for="" class="form-label negrito">Complemento :</label>
-      <p class="mb-4">Apartamento 212A </p>
-    </div>
-    <button type="submit" (click)="redirecionar()" class="btn btn-primary">Dados vacinação</button>
-    </form>
-  </div>
+<h2 class="centralizar mt-4">Consultar Pacientes</h2>
+<div class="posicao mt-4">
+  <table>
+    <thead>
+      <tr>
+        <th class="ps-3">ID</th>
+        <th>Nome</th>
+        <th>Detalhes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let paciente of data" class="border">
+        <td class="ps-3">{{ paciente.id }}</td>
+        <td>{{ paciente.name }}</td>
+        <td><button class="btn" (click)="verDetalhes(paciente)"><img src="assets/loupe.png"></button></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
