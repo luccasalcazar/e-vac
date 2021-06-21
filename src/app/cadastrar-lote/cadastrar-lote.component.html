@@ -1,0 +1,13 @@
+<app-sidebar></app-sidebar>
+<h2 class="centralizar mt-4">Cadastrar Lote</h2>
+<div class="d-flex justify-content-center">
+  <div class="">
+    <form [formGroup]="cadastrarLoteForm">
+    <div class="mb-3">
+      <label for="" class="form-label mt-3">Quantidade</label>
+      <input type="text" class="form-control largura mb-3" formControlName="quantity">
+    </div>
+    <button type="submit" (click)="registrar()" class="btn btn-primary" [disabled]="!cadastrarLoteForm.valid">Cadastrar</button>
+    </form>
+  </div>
+</div>

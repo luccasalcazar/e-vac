@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { ConsultarPacienteComponent } from './consultar-paciente/consultar-paciente.component';
 import { ConsultarFuncionarioComponent } from './consultar-funcionario/consultar-funcionario.component';
 import { TwitterComponent } from './twitter/twitter.component';
+import { CadastrarLoteComponent } from './cadastrar-lote/cadastrar-lote.component';
 
 const routes: Routes = [
   {
@@ -54,6 +55,10 @@ const routes: Routes = [
   {
     path: 'twitter',
     component: TwitterComponent
+  },
+  {
+    path: 'cadastrar-lote/:id',
+    component: CadastrarLoteComponent
   }
 ];
 

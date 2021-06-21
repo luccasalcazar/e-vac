@@ -34,11 +34,19 @@ export class VacinaService {
   getVacina(id) {
     return this.http
       .get(
-        URL + '/vaccines/used/' + id
+        URL + '/batch/' + id
       )
   }
 
   setVacina(vacina) {
     this.usuario.next(vacina);
+  }
+
+  cadastrarLote(obj, id) {
+    return this.http
+      .post(
+        URL + '/batch/new/' + id,
+        obj
+      )
   }
 }

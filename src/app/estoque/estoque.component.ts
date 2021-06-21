@@ -33,5 +33,6 @@ export class EstoqueComponent implements OnInit{
     this.vacinaService.setVacina(vacina);
     console.log(vacina);
     this.router.navigate([`consultar-vacinas/${vacina.id}`]);
+    localStorage.setItem('idVacina', vacina.id);
   }
 }

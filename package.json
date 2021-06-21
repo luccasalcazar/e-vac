@@ -33,6 +33,7 @@
     "datatables.net-dt": "^1.10.25",
     "fontawesome": "^5.6.3",
     "jquery": "^3.6.0",
+    "moment": "^2.29.1",
     "ngx-mask": "^11.1.5",
     "rxjs": "~6.6.0",
     "sweetalert2": "^11.0.16",

@@ -12,7 +12,8 @@ export class ConsultarVacinasComponent implements OnInit {
   
   id: number;
   data: any = [];
-  
+  idVacina: any;
+
   constructor(
     private vacinaService: VacinaService,
     private router: Router,
@@ -32,6 +33,9 @@ export class ConsultarVacinasComponent implements OnInit {
   }
 
   redirecionar() {
-    this.router.navigate(['estoque']);
+    this.idVacina = localStorage.getItem('idVacina');
+    let id = this.idVacina;
+    console.log(this.idVacina);
+    this.router.navigate([`cadastrar-lote/${id}`]);
   }
 }

@@ -1,1 +1,25 @@
 <app-sidebar></app-sidebar>
+<div class="display">
+  <h1 class="titulo">Lotes</h1>
+  <div class="posicao mt-4">
+    <table>
+      <thead>
+        <tr>
+          <th class="ps-3">ID</th>
+          <th>Quantidade</th>
+          <th>Data</th>
+          <th>Validade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let lote of data" class="border">
+          <td class="ps-3">{{ lote.idBatch }}</td>
+          <td>{{ lote.quantity }}</td>
+          <td>{{ lote.arrival }}</td>
+          <td>{{ lote.dueDate }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="submit" (click)="redirecionar()" class="btn btn-primary mt-4">Cadastrar Lote</button>
+  </div>
+</div>

@@ -23,6 +23,7 @@ import { ConsultarPacienteComponent } from './consultar-paciente/consultar-pacie
 import { DataTablesModule } from 'angular-datatables';
 import { ConsultarFuncionarioComponent } from './consultar-funcionario/consultar-funcionario.component';
 import { TwitterComponent } from './twitter/twitter.component';
+import { CadastrarLoteComponent } from './cadastrar-lote/cadastrar-lote.component';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 @NgModule({
@@ -39,7 +40,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     ConsultarVacinasComponent,
     ConsultarPacienteComponent,
     ConsultarFuncionarioComponent,
-    TwitterComponent
+    TwitterComponent,
+    CadastrarLoteComponent
   ],
   imports: [
     BrowserModule,

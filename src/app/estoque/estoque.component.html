@@ -7,6 +7,7 @@
         <tr>
           <th class="ps-3">ID</th>
           <th>Marca</th>
+          <th>Quantidade</th>
           <th>Detalhes</th>
         </tr>
       </thead>
@@ -14,6 +15,7 @@
         <tr *ngFor="let vacina of data" class="border">
           <td class="ps-3">{{ vacina.id }}</td>
           <td>{{ vacina.nameVaccine }}</td>
+          <td>{{ vacina.stock }}</td>
           <td><button class="btn" (click)=verDetalhes(vacina)><img src="assets/loupe.png"></button></td>
         </tr>
       </tbody>
