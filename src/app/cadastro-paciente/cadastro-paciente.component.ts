@@ -36,7 +36,7 @@ export class CadastroPacienteComponent implements OnInit{
         cep: ['', Validators.required],
         address: ['', Validators.required],
         number: ['', Validators.required],
-        complemento: ['', Validators.required],
+        complemento: [''],
         marcaVacina: ['', Validators.required]
       });
     }
@@ -61,7 +61,7 @@ export class CadastroPacienteComponent implements OnInit{
           title: 'Cadastro efetuado com sucesso',
           confirmButtonText: 'OK'
         }).then(res => {
-          this.router.navigate(['registro-vacina'])
+          this.router.navigate(['home'])
         })
       },
       err => {

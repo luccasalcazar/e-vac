@@ -1,5 +1,5 @@
 <header class="fixed-top"></header>
   <div class="header-background">
     <a href="/home" class="titulo margin">E-Vac</a>
-    <button type="button" class="btn btn-outline-dark" (click)="logout()">Deslogar</button>
+    <button type="button" class="btn btn-outline-dark" (click)="logout()" *ngIf="this.logado">Deslogar</button>
   </div>
